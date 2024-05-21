@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    [SerializeField] private Animator anim;
     private IState<Character> currentState;
+    private string currentAnim;
 
     private void Start()
     {
@@ -37,7 +39,12 @@ public class Character : MonoBehaviour
 
     public void ChangeAnim(string animName)
     {
-        
+        if (currentAnim != animName)
+        {
+            anim.ResetTrigger(currentAnim);
+            currentAnim = animName;
+            anim.SetTrigger(currentAnim);
+        }
     }
 
 }

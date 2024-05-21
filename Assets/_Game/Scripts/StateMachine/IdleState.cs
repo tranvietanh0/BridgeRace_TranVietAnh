@@ -6,7 +6,7 @@ public class IdleState : IState<Character>
 {
     public void OnEnter(Character t)
     {
-
+        
     }
 
     public void OnExecute(Character t)
