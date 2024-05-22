@@ -36,6 +36,7 @@ public class Player : Character
         {
             ChangeAnim(Const.IDLE_ANIM);
         }
+        // transform.Translate(new Vector3(joystick.Horizontal, 0, joystick.Vertical) * moveSpeed * Time.deltaTime, Space.World);
         rb.MovePosition(rb.position + m_moveVector);
     }
 }

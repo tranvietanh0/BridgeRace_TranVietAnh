@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,9 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [SerializeField] private Animator anim;
+    [SerializeField] private Transform brickBack;
+    [SerializeField] private GameObject brickBackPrefab;
+    private List<GameObject> brickBacks = new List<GameObject>();
     private IState<Character> currentState;
     private string currentAnim;
 
@@ -47,4 +51,24 @@ public class Character : MonoBehaviour
         }
     }
 
+    private void AddBrick()
+    {
+        GameObject brickObject = Instantiate(brickBackPrefab, brickBack);
+        brickObject.transform.localPosition = Vector3.up * 0.4f * brickBacks.Count;
+        Debug.Log("adu");
+        brickBacks.Add(brickObject);
+    }
+
+    private void RemoveBrick()
+    {
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(GameTag.Brick.ToString()))
+        {
+            AddBrick();
+        }
+    }
 }
