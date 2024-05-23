@@ -3,14 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public class Character : GameUnit
 {
     [SerializeField] private Animator anim;
     [SerializeField] private Transform brickBack;
-    [SerializeField] private GameObject brickBackPrefab;
-    private List<GameObject> brickBacks = new List<GameObject>();
+    [SerializeField] private CharacterBrick brickBackPrefab;
+    [SerializeField] private ColorData colorData;
+    [SerializeField] private Renderer rd;
+    private List<CharacterBrick> brickBacks = new List<CharacterBrick>();
     private IState<Character> currentState;
     private string currentAnim;
+    public ColorType colorType;
 
     private void Start()
     {
@@ -52,23 +55,28 @@ public class Character : MonoBehaviour
     }
 
     private void AddBrick()
-    {
-        GameObject brickObject = Instantiate(brickBackPrefab, brickBack);
+    { 
+        CharacterBrick brickObject = Instantiate(brickBackPrefab, brickBack);
+        brickObject.ChangeColor(colorType);
         brickObject.transform.localPosition = Vector3.up * 0.4f * brickBacks.Count;
-        Debug.Log("adu");
         brickBacks.Add(brickObject);
-    }
-
-    private void RemoveBrick()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(GameTag.Brick.ToString()))
+        if (other.CompareTag(Const.TAG_BRICK))
         {
-            AddBrick();
+            Brick brick = Cache.GetBrick(other);
+            if (brick.colorType == colorType)
+            {
+                Destroy(brick.gameObject);
+                AddBrick();
+            }
         }
+    }
+    public void ChangeColor(ColorType colorType)
+    {
+        this.colorType = colorType;
+        rd.material = colorData.GetColorMatByEnum((int)colorType);
     }
 }

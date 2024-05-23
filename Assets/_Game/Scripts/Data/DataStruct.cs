@@ -7,19 +7,20 @@ public enum ColorType
     None = 0,
     Red = 1,
     Green = 2,
-    Yellow = 3
+    Yellow = 3,
+    Orange = 4,
+    Purple = 5,
+    Black = 6
 }
 
-public enum GameTag
-{
-    None = 0,
-    Player = 1,
-    Enemy = 2,
-    Brick = 3
-}
+
 public class Const
 {
     public const string DANCE_ANIM = "dance";
     public const string IDLE_ANIM = "idle";
     public const string RUN_ANIM = "run";
+
+    public const string TAG_BRICK = "Brick";
+    public const string TAG_PLAYER = "Player";
+
 }

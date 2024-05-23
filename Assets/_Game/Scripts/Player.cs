@@ -14,6 +14,11 @@ public class Player : Character
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotateSpeed = 5f;
     private Vector3 m_moveVector;
+
+    private void Start()
+    {
+        GetFirstPos();
+    }
     private void Update()
     {
         Move();
@@ -38,5 +43,10 @@ public class Player : Character
         }
         // transform.Translate(new Vector3(joystick.Horizontal, 0, joystick.Vertical) * moveSpeed * Time.deltaTime, Space.World);
         rb.MovePosition(rb.position + m_moveVector);
+    }
+
+    private void GetFirstPos()
+    {
+        transform.position = LevelManager.Instance().firstPosPlayer.position;
     }
 }

@@ -6,18 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="f94a555f-e971-402d-a3b7-58c571ed5d77" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BridgeRace_TranVietAnh/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BridgeRace_TranVietAnh/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Materials/Blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Materials/Blue.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Animation/PlayerController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Animation/PlayerController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Materials/Blue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Materials/Blue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Brick.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Brick.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Bridge.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Bridge.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Platform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Platform.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Step.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Step.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Winpos.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Winpos.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Const.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Const.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Brick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Brick.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/DataStruct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/DataStruct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/FinishPos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/FinishPos.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Platform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Platform.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/StateMachine/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/StateMachine/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Pool/Guner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Pool/Guner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Pool/Pool/PoolControler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Pool/Pool/PoolControler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +33,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Data/Const.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Bot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/CharacterBrick.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Data/DataStruct.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/FinishPos.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
@@ -114,7 +120,12 @@
       <workItem from="1716000755171" duration="1090000" />
       <workItem from="1716252214395" duration="25648000" />
       <workItem from="1716346868862" duration="1929000" />
-      <workItem from="1716358800890" duration="1243000" />
+      <workItem from="1716358800890" duration="2239000" />
+      <workItem from="1716378386221" duration="6880000" />
+      <workItem from="1716394413530" duration="7313000" />
+      <workItem from="1716420084236" duration="15007000" />
+      <workItem from="1716447814981" duration="890000" />
+      <workItem from="1716473881649" duration="4507000" />
     </task>
     <servers />
   </component>

@@ -34,12 +34,12 @@ public class Guner : MonoBehaviour
 
     public void Fire()
     {
-        for (int i = 0; i < bulletPoints.Length; i++)
-        {
-            //cach 1 lay prefab truc tiep
-            //SimplePool.Spawn(bulletPrefab, bulletPoints[i].position, bulletPoints[i].rotation).OnInit();
-            //cach 2 lay theo pool type voi dieu kien object do phat de trong folder Resources/Pool
-            SimplePool.Spawn<Bullet>(PoolType.Bullet_2 , bulletPoints[i].position, bulletPoints[i].rotation).OnInit();
-        }
+        // for (int i = 0; i < bulletPoints.Length; i++)
+        // {
+        //     //cach 1 lay prefab truc tiep
+        //     //SimplePool.Spawn(bulletPrefab, bulletPoints[i].position, bulletPoints[i].rotation).OnInit();
+        //     //cach 2 lay theo pool type voi dieu kien object do phat de trong folder Resources/Pool
+        //     SimplePool.Spawn<Bullet>(PoolType.Bullet_2 , bulletPoints[i].position, bulletPoints[i].rotation).OnInit();
+        // }
     }
 }
