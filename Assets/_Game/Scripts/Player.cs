@@ -22,6 +22,7 @@ public class Player : Character
     private void Update()
     {
         Move();
+        CheckStair();
     }
 
     private void Move()

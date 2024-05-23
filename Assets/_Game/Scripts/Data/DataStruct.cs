@@ -22,5 +22,6 @@ public class Const
 
     public const string TAG_BRICK = "Brick";
     public const string TAG_PLAYER = "Player";
+    public const string TAG_STAIR = "Floor";
 
 }

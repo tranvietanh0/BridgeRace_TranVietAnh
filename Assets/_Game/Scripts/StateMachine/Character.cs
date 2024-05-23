@@ -10,9 +10,11 @@ public class Character : GameUnit
     [SerializeField] private CharacterBrick brickBackPrefab;
     [SerializeField] private ColorData colorData;
     [SerializeField] private Renderer rd;
+    
     private List<CharacterBrick> brickBacks = new List<CharacterBrick>();
     private IState<Character> currentState;
     private string currentAnim;
+    private bool isMoveOnStair = true;
     public ColorType colorType;
 
     private void Start()
@@ -58,8 +60,48 @@ public class Character : GameUnit
     { 
         CharacterBrick brickObject = Instantiate(brickBackPrefab, brickBack);
         brickObject.ChangeColor(colorType);
+        //thay doi do cao cua gach
         brickObject.transform.localPosition = Vector3.up * 0.4f * brickBacks.Count;
         brickBacks.Add(brickObject);
+    }
+
+    private void RemoveBrick()
+    {
+        Vector3 originPos = TF.position + Vector3.forward + Vector3.down * 1.5f;
+        Ray ray = new Ray(originPos, Vector3.up);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            Debug.DrawRay(TF.position + Vector3.forward, Vector3.up, Color.red);
+            if (hit.collider.CompareTag(Const.TAG_STAIR))
+            {
+                CharacterBrick brickBackPlayer = brickBacks[brickBacks.Count - 1];
+                brickBacks.RemoveAt(brickBacks.Count - 1);
+                Destroy(brickBackPlayer.gameObject);
+            }
+        }
+    }
+    protected void CheckStair()
+    {
+        Vector3 originPos = TF.position + Vector3.forward + Vector3.down * 1.5f;
+        Ray ray = new Ray(originPos, Vector3.up);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            Debug.DrawRay(TF.position + Vector3.forward, Vector3.up, Color.red);
+            if (hit.collider.CompareTag(Const.TAG_STAIR))
+            {
+                //goi collider cua stair tu cache
+                Stair stair = Cache.GetStair(hit.collider);
+                if (stair.colorType != colorType && brickBacks.Count > 0)
+                {
+                    stair.ChangeColor(colorType);
+                    RemoveBrick();
+                }
+                // if(brickBacks.Count == 0 && )
+            }
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -74,6 +116,7 @@ public class Character : GameUnit
             }
         }
     }
+    
     public void ChangeColor(ColorType colorType)
     {
         this.colorType = colorType;
