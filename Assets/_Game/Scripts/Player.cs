@@ -28,6 +28,7 @@ public class Player : Character
     private void Update()
     {
         Move();
+        //to mau cho gach
         if (brickBacks.Count > 0)
         {
             CheckStair();
@@ -36,6 +37,7 @@ public class Player : Character
         if (brickBacks.Count == 0 && Physics.Raycast(TF.position + Vector3.forward + Vector3.down * 1.5f, Vector3.up, out RaycastHit hit))
         {
             Stair stair = Cache.GetStair(hit.collider);
+            // check stair va mau khac vs mau player thi moi dung lai
             if (hit.collider.CompareTag(Const.TAG_STAIR) && stair.colorType != colorType)
             {
                 Debug.DrawRay(TF.position, Vector3.down, Color.green, bridgeLayer);
@@ -46,6 +48,7 @@ public class Player : Character
                 isMoving = true;
             }
         }
+        // quay joystick xuong thi move dc 
         if (joystick.Vertical <= 0)
         {
             isMoving = false;

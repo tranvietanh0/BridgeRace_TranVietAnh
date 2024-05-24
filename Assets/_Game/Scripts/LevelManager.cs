@@ -11,7 +11,7 @@ public class LevelManager : GOSingleton<LevelManager>
 
     private List<ColorType> colorTypes = new List<ColorType>() {ColorType.Red, ColorType.Green, ColorType.Yellow, ColorType.Orange, ColorType.Purple, ColorType.Black };
 
-    private List<ColorType> colorRandoms = new List<ColorType>();
+    public List<ColorType> colorRandoms = new List<ColorType>();
 
     private List<Bot> bots = new List<Bot>();
     

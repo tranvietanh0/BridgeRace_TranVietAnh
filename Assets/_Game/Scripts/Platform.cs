@@ -11,28 +11,30 @@ public class Platform : MonoBehaviour
     [SerializeField] public List<Vector3> brickPositions = new List<Vector3>();
     public List<Brick> brickOnStages = new List<Brick>();
     public List<Brick> brickAfterChangeColor = new List<Brick>();
+    public List<Vector3> brickNewPlatforms = new List<Vector3>();
     public List<Vector3> checkPos = new List<Vector3>();
     public ColorType colorType;
 
-    public Vector3 m_spawnBrickPos;
+    public Vector3 spawnBrickPos;
 
     private void Start()
     {
     }
 
+    // sinh ra cac vi tri rong de xep gach vao moi stage
     public void OnEmptyPoint()
     {
-        m_spawnBrickPos = firstBrickPos.position;
-        m_spawnBrickPos.y -= 0.5f;
+        spawnBrickPos = firstBrickPos.position;
+        spawnBrickPos.y -= 0.5f;
         for (int i = 0; i < 5; i++)
         {
             for (int j = 0; j < 9; j++)
             {
-                brickPositions.Add(m_spawnBrickPos);
-                m_spawnBrickPos.x += 1.5f;
+                brickPositions.Add(spawnBrickPos);
+                spawnBrickPos.x += 1.5f;
             }
-            m_spawnBrickPos.z -= 2f;
-            m_spawnBrickPos.x = firstBrickPos.position.x;
+            spawnBrickPos.z -= 2f;
+            spawnBrickPos.x = firstBrickPos.position.x;
         }
     }
 
@@ -40,6 +42,7 @@ public class Platform : MonoBehaviour
     {
         while (checkPos.Count < brickPositions.Count)
         {
+            
             int randomIndex = Random.Range(0, brickPositions.Count);
             if (!checkPos.Contains(brickPositions[randomIndex]))
             {
@@ -60,6 +63,24 @@ public class Platform : MonoBehaviour
                 brickOnStages[i].ChangeColor(colorTypes[colorIndex]);
                 brickAfterChangeColor.Add(brickOnStages[i]);
             }
+        }
+    }
+
+    public void BrickOnNextPlatform(Character character)
+    {
+        int sumRandomBrick = brickPositions.Count / 3;
+        while (sumRandomBrick != 0)
+        {
+            
+            int randomIndex = Random.Range(0, sumRandomBrick);
+            if (!brickNewPlatforms.Contains(brickPositions[randomIndex]))
+            {
+                brickNewPlatforms.Add(brickPositions[randomIndex]);
+                Brick brick = SimplePool.Spawn<Brick>(brickPrefab, brickPositions[randomIndex], Quaternion.identity);
+                brick.ChangeColor(character.colorType);
+                brickOnStages.Add(brick);
+            }
+            sumRandomBrick--;
         }
     }
 
