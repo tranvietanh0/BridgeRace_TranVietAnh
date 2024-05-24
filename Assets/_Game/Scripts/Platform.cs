@@ -9,17 +9,16 @@ public class Platform : MonoBehaviour
     [SerializeField] public Transform firstBrickPos;
     [SerializeField] public Brick brickPrefab;
     [SerializeField] public List<Vector3> brickPositions = new List<Vector3>();
+    [SerializeField] private Character character;
+    
     public List<Brick> brickOnStages = new List<Brick>();
     public List<Brick> brickAfterChangeColor = new List<Brick>();
     public List<Vector3> brickNewPlatforms = new List<Vector3>();
     public List<Vector3> checkPos = new List<Vector3>();
     public ColorType colorType;
-
+    
     public Vector3 spawnBrickPos;
-
-    private void Start()
-    {
-    }
+    
 
     // sinh ra cac vi tri rong de xep gach vao moi stage
     public void OnEmptyPoint()
@@ -78,11 +77,23 @@ public class Platform : MonoBehaviour
                 brickNewPlatforms.Add(brickPositions[randomIndex]);
                 Brick brick = SimplePool.Spawn<Brick>(brickPrefab, brickPositions[randomIndex], Quaternion.identity);
                 brick.ChangeColor(character.colorType);
-                brickOnStages.Add(brick);
             }
             sumRandomBrick--;
         }
     }
+
+    // private void SpawnBrickAfterTake(List<ColorType> colorTypes)
+    // {
+    //     if (brickOnStages.Count < 40)
+    //     {
+    //         for (int i = 0; i < character.emptyPos.Count; i++)
+    //         {
+    //             Brick brick = SimplePool.Spawn<Brick>(brickPrefab, character.emptyPos[i], Quaternion.identity);
+    //             int colorIndex = i % colorTypes.Count;
+    //             brick.ChangeColor(colorTypes[colorIndex]);
+    //         }
+    //     }
+    // }
 
     public void FindSameColor()
     {

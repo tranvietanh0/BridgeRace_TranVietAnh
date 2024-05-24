@@ -8,6 +8,7 @@ TagManager:
   - BridgeTile
   - Floor
   - Brick
+  - Win
   layers:
   - Default
   - TransparentFX

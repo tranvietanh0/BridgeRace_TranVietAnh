@@ -14,11 +14,12 @@ public class Character : GameUnit
     [SerializeField] protected LayerMask groundLayer;
     
     protected List<CharacterBrick> brickBacks = new List<CharacterBrick>();
+    public List<Vector3> emptyPos = new List<Vector3>();
     private IState<Character> currentState;
-    private string currentAnim;
+    private string currentAnim = Const.IDLE_ANIM;
     protected bool isMoveOnStair = true;
+    protected bool isWin = false;
     public ColorType colorType;
-
     private void Start()
     {
         ChangeState(new IdleState());
@@ -50,6 +51,7 @@ public class Character : GameUnit
 
     public void ChangeAnim(string animName)
     {
+        Debug.Log(animName);
         if (currentAnim != animName)
         {
             anim.ResetTrigger(currentAnim);
@@ -114,9 +116,15 @@ public class Character : GameUnit
             Brick brick = Cache.GetBrick(other);
             if (brick.colorType == colorType)
             {
-                Destroy(brick.gameObject);
+                brick.DelayAppear();
                 AddBrick();
             }
+        }
+
+        if (other.CompareTag(Const.TAG_WINPOS))
+        {
+            isWin = true;
+            ChangeAnim(Const.DANCE_ANIM);
         }
     }
     

@@ -70,7 +70,7 @@ public class Player : Character
                 ChangeAnim(Const.RUN_ANIM);
 
             }
-            else if (joystick.Horizontal == 0 && joystick.Vertical == 0)
+            else if (joystick.Horizontal == 0 && joystick.Vertical == 0 && !isWin)
             {
                 ChangeAnim(Const.IDLE_ANIM);
             }
