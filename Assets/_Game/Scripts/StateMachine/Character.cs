@@ -10,11 +10,13 @@ public class Character : GameUnit
     [SerializeField] private CharacterBrick brickBackPrefab;
     [SerializeField] private ColorData colorData;
     [SerializeField] private Renderer rd;
+    [SerializeField] protected LayerMask bridgeLayer;
+    [SerializeField] protected LayerMask groundLayer;
     
-    private List<CharacterBrick> brickBacks = new List<CharacterBrick>();
+    protected List<CharacterBrick> brickBacks = new List<CharacterBrick>();
     private IState<Character> currentState;
     private string currentAnim;
-    private bool isMoveOnStair = true;
+    protected bool isMoveOnStair = true;
     public ColorType colorType;
 
     private void Start()
@@ -91,19 +93,20 @@ public class Character : GameUnit
             Debug.DrawRay(TF.position + Vector3.forward, Vector3.up, Color.red);
             if (hit.collider.CompareTag(Const.TAG_STAIR))
             {
+                //check xem con di chuyen tren cau khong
+                isMoveOnStair = true;
                 //goi collider cua stair tu cache
                 Stair stair = Cache.GetStair(hit.collider);
-                if (stair.colorType != colorType && brickBacks.Count > 0)
+                if (stair.colorType != colorType)
                 {
                     stair.ChangeColor(colorType);
                     RemoveBrick();
                 }
-                // if(brickBacks.Count == 0 && )
             }
         }
 
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(Const.TAG_BRICK))

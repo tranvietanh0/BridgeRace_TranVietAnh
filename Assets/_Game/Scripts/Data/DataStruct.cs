@@ -24,4 +24,7 @@ public class Const
     public const string TAG_PLAYER = "Player";
     public const string TAG_STAIR = "Floor";
 
+    public const string LAYER_BRIDGE = "Bridge";
+    public const string LAYER_GROUND = "Ground";
+
 }

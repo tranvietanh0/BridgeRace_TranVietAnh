@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1318717917699704180}
   - component: {fileID: 8017229969813170350}
   - component: {fileID: 1569074603367105761}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Step
   m_TagString: Floor
   m_Icon: {fileID: 0}
