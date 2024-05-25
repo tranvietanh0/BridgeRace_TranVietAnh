@@ -18,15 +18,12 @@ public class Character : GameUnit
     private IState<Character> currentState;
     private string currentAnim = Const.IDLE_ANIM;
     protected bool isMoveOnStair = true;
-    protected bool isWin = false;
+    public bool isWin = false;
     public ColorType colorType;
-    private void Start()
-    {
-        ChangeState(new IdleState());
-    }
+    
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (currentState != null)
         {
@@ -34,19 +31,9 @@ public class Character : GameUnit
         }
     }
 
-    public void ChangeState(IState<Character> state)
+    public virtual void OnInit()
     {
-        if (currentState != null)
-        {
-            currentState.OnExit(this);
-        }
-
-        currentState = state;
-
-        if (currentState != null)
-        {
-            currentState.OnEnter(this);
-        }
+        RemoveAllBrick();
     }
 
     public void ChangeAnim(string animName)
@@ -85,6 +72,14 @@ public class Character : GameUnit
             }
         }
     }
+
+    private void RemoveAllBrick()
+    {
+        for (int i = 0; i < brickBacks.Count; i++)
+        {
+            brickBacks.Clear();
+        }
+    }
     protected void CheckStair()
     {
         Vector3 originPos = TF.position + Vector3.forward + Vector3.down * 1.5f;
@@ -121,11 +116,6 @@ public class Character : GameUnit
             }
         }
 
-        if (other.CompareTag(Const.TAG_WINPOS))
-        {
-            isWin = true;
-            ChangeAnim(Const.DANCE_ANIM);
-        }
     }
     
     public void ChangeColor(ColorType colorType)

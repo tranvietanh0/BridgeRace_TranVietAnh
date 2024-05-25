@@ -67,11 +67,11 @@ public class Platform : MonoBehaviour
 
     public void BrickOnNextPlatform(Character character)
     {
-        int sumRandomBrick = brickPositions.Count / 3;
+        int sumRandomBrick = brickPositions.Count / 4;
         while (sumRandomBrick != 0)
         {
-            
-            int randomIndex = Random.Range(0, sumRandomBrick);
+            Debug.Log(brickPositions.Count);
+            int randomIndex = Random.Range(0, brickPositions.Count);
             if (!brickNewPlatforms.Contains(brickPositions[randomIndex]))
             {
                 brickNewPlatforms.Add(brickPositions[randomIndex]);

@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : IState<Character>
+public class IdleState : IState<Bot>
 {
-    public void OnEnter(Character t)
+    // tro vao cai IState
+    // Ctrl + .
+    public void OnEnter(Bot t)
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    public void OnExecute(Character t)
+    public void OnExecute(Bot t)
     {
-
+        throw new System.NotImplementedException();
     }
 
-    public void OnExit(Character t)
+    public void OnExit(Bot t)
     {
-
+        throw new System.NotImplementedException();
     }
-
 }

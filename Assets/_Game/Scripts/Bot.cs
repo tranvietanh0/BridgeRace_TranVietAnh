@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class Bot : Character
 {
-    // Start is called before the first frame update
-    void Start()
+    private IState<Bot> currentState;
+
+    private void Update()
     {
-        
+        if (currentState != null)
+        {
+            currentState.OnExecute(this);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnInit()
     {
-        
+        base.OnInit();
+        ChangeAnim(Const.IDLE_ANIM);
+    }
+
+    public void ChangeState(IState<Bot> state)
+    {
+        if (currentState != null)
+        {
+            currentState.OnExit(this);
+        }
+
+        currentState = state;
+
+        if (currentState != null)
+        {
+            currentState.OnEnter(this);
+        }
     }
 }

@@ -2,21 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackState : IState<Character>
+public class AttackState : IState<Bot>
 {
-    public void OnEnter(Character t)
+    public void OnEnter(Bot t)
     {
-
+        throw new System.NotImplementedException();
     }
 
-    public void OnExecute(Character t)
+    public void OnExecute(Bot t)
     {
-
+        throw new System.NotImplementedException();
     }
 
-    public void OnExit(Character t)
+    public void OnExit(Bot t)
     {
-
+        throw new System.NotImplementedException();
     }
-
 }
