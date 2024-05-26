@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class LevelManager : GOSingleton<LevelManager>
 {
@@ -13,6 +15,7 @@ public class LevelManager : GOSingleton<LevelManager>
 
     public List<ColorType> colorRandoms = new List<ColorType>();
     private List<Bot> bots = new List<Bot>();
+    public List<Brick> BrickAfterChangeColor => platform.brickAfterChangeColor;
     
     // Start is called before the first frame update
     void Start()
@@ -62,6 +65,5 @@ public class LevelManager : GOSingleton<LevelManager>
             Bot bot = SimplePool.Spawn<Bot>(PoolType.Bot, characterPos[i], Quaternion.identity);
             bot.ChangeColor(colorRandoms[i]);
         }
-        Debug.Log(platform.brickAfterChangeColor.Count);
     }
 }

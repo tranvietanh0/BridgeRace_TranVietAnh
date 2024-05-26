@@ -15,6 +15,7 @@ public class Platform : MonoBehaviour
     public List<Brick> brickOnStages = new List<Brick>();
     public List<Brick> brickAfterChangeColor = new List<Brick>();
     public List<Vector3> brickNewPlatforms = new List<Vector3>();
+    public List<Brick> brickBotTake = new List<Brick>();
     public List<Vector3> checkPos = new List<Vector3>();
     public ColorType colorType;
     
@@ -97,21 +98,54 @@ public class Platform : MonoBehaviour
     //     }
     // }
 
-    public Brick FindSameColor(ColorType colorType)
+    // public Brick FindSameColor(ColorType colorType, Vector3 botPos) 
+    // {
+    //     Debug.Log(LevelManager.Instance().BrickAfterChangeColor.Count);
+    //     Brick brick = null;
+    //     float minDistance = Mathf.Infinity;
+    //     for (int i = 0; i < LevelManager.Instance().BrickAfterChangeColor.Count; i++)
+    //     {
+    //         if (LevelManager.Instance().BrickAfterChangeColor[i].colorType == colorType)
+    //         {
+    //             float distance = Vector3.Distance(botPos, LevelManager.Instance().BrickAfterChangeColor[i].TF.position);
+    //             if (distance < minDistance)
+    //             {
+    //                 minDistance = distance;
+    //                 brick = LevelManager.Instance().BrickAfterChangeColor[i];
+    //             }
+    //         }
+    //     }
+    //
+    //     return brick;
+    // }
+    
+    public Brick FindSameColor(ColorType colorType) 
     {
-        Debug.Log(brickOnStages.Count);
-        Debug.Log(brickAfterChangeColor.Count);
-        Brick brick = null;
-        for (int i = 0; i < brickAfterChangeColor.Count; i++)
+        Brick closestBrick = null;
+        float minDistance = Mathf.Infinity;
+        for (int i = 0; i < LevelManager.Instance().BrickAfterChangeColor.Count; i++)
         {
-            if (brickAfterChangeColor[i].colorType == colorType)
+            Brick brick = LevelManager.Instance().BrickAfterChangeColor[i];
+            if (brick.colorType == colorType && !brickBotTake.Contains(brick))
             {
-                brick = brickAfterChangeColor[i];
-                break;
+                float distance = Vector3.Distance(LevelManager.Instance().player.transform.position, brick.TF.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closestBrick = brick;
+                }
             }
         }
 
-        return brick;
+        if (closestBrick != null)
+        {
+            brickBotTake.Add(closestBrick);
+        }
+    
+        return closestBrick;
     }
+
+
+    
         
 }

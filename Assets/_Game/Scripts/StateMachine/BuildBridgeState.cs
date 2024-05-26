@@ -2,16 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackState : IState<Bot>
+public class BuildBridgeState : IState<Bot>
 {
     public void OnEnter(Bot t)
     {
-        throw new System.NotImplementedException();
+        if (t.isWin)
+        {
+            
+        }
+        else
+        {
+            
+        }
     }
 
     public void OnExecute(Bot t)
     {
-        throw new System.NotImplementedException();
+        t.CheckStair();
     }
 
     public void OnExit(Bot t)

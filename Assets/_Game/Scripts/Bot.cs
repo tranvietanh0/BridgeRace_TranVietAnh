@@ -9,7 +9,6 @@ public class Bot : Character
     private IState<Bot> currentState;
     [SerializeField] public NavMeshAgent agent;
     [SerializeField] private Transform finishPos;
-    [SerializeField] private Rigidbody rb;
 
     private void Start()
     {
@@ -22,6 +21,11 @@ public class Bot : Character
         {
             currentState.OnExecute(this);
         }
+    }
+
+    public void MoveToWinPos()
+    {
+        agent.SetDestination(finishPos.position);
     }
 
     public override void OnInit()

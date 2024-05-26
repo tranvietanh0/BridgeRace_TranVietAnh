@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Character : GameUnit
@@ -21,6 +22,8 @@ public class Character : GameUnit
     public bool isWin = false;
     public ColorType colorType;
     public Platform platform;
+
+    public int BotBrick => brickBacks.Count;
     
 
     // Update is called once per frame
@@ -114,7 +117,7 @@ public class Character : GameUnit
             brickBacks.RemoveAt(i);
         }
     }
-    protected void CheckStair()
+    public void CheckStair()
     {
         Vector3 originPos = TF.position + Vector3.forward + Vector3.down * 1.5f;
         Ray ray = new Ray(originPos, Vector3.up);
