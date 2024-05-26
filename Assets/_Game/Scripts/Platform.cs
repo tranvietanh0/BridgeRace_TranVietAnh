@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -54,6 +55,7 @@ public class Platform : MonoBehaviour
 
     public void ChangeColorBrickOnStage(List<ColorType> colorTypes)
     {
+        brickAfterChangeColor.Clear();
         for (int i = 0; i < brickOnStages.Count; i++)
         {
             int colorIndex = i % colorTypes.Count;
@@ -95,9 +97,21 @@ public class Platform : MonoBehaviour
     //     }
     // }
 
-    public void FindSameColor()
+    public Brick FindSameColor(ColorType colorType)
     {
-        
+        Debug.Log(brickOnStages.Count);
+        Debug.Log(brickAfterChangeColor.Count);
+        Brick brick = null;
+        for (int i = 0; i < brickAfterChangeColor.Count; i++)
+        {
+            if (brickAfterChangeColor[i].colorType == colorType)
+            {
+                brick = brickAfterChangeColor[i];
+                break;
+            }
+        }
+
+        return brick;
     }
         
 }

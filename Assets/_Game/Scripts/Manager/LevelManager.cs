@@ -12,7 +12,6 @@ public class LevelManager : GOSingleton<LevelManager>
     private List<ColorType> colorTypes = new List<ColorType>() {ColorType.Red, ColorType.Green, ColorType.Yellow, ColorType.Orange, ColorType.Purple, ColorType.Black };
 
     public List<ColorType> colorRandoms = new List<ColorType>();
-
     private List<Bot> bots = new List<Bot>();
     
     // Start is called before the first frame update
@@ -26,6 +25,7 @@ public class LevelManager : GOSingleton<LevelManager>
     {
         
     }
+    
 
     private void OnInit()
     {
@@ -49,13 +49,9 @@ public class LevelManager : GOSingleton<LevelManager>
         }
         //set up platform
         platform.OnEmptyPoint();
-        for (int i = 0; i < 45; i++)
-        {
-            int randomColorIndex = Random.Range(0, colorRandoms.Count);
-            platform.EnableBrick();
-            platform.ChangeColorBrickOnStage(colorRandoms);
+        platform.EnableBrick();
+        platform.ChangeColorBrickOnStage(colorRandoms);
             // platform.TakeColor(colorRandoms[randomColorIndex]);
-        }
         //set mau cho player
         int randomIndexPlayerColor = Random.Range(0, colorRandoms.Count);
         player.ChangeColor(colorRandoms[randomIndexPlayerColor]);
@@ -66,5 +62,6 @@ public class LevelManager : GOSingleton<LevelManager>
             Bot bot = SimplePool.Spawn<Bot>(PoolType.Bot, characterPos[i], Quaternion.identity);
             bot.ChangeColor(colorRandoms[i]);
         }
+        Debug.Log(platform.brickAfterChangeColor.Count);
     }
 }

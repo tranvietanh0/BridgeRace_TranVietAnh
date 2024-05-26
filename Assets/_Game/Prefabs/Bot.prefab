@@ -145,6 +145,10 @@ MonoBehaviour:
   emptyPos: []
   isWin: 0
   colorType: 0
+  platform: {fileID: 8813233095203945921, guid: a24e487f5c9f21b4cbd155a8b67ee34b, type: 3}
+  agent: {fileID: 7078231508050589688}
+  finishPos: {fileID: 5280811155864013642, guid: 2dffb8560cf13434bb39f9a3cfc88b0c, type: 3}
+  rb: {fileID: 0}
 --- !u!195 &7078231508050589688
 NavMeshAgent:
   m_ObjectHideFlags: 0

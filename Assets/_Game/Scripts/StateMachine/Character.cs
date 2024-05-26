@@ -20,6 +20,7 @@ public class Character : GameUnit
     protected bool isMoveOnStair = true;
     public bool isWin = false;
     public ColorType colorType;
+    public Platform platform;
     
 
     // Update is called once per frame
@@ -38,7 +39,6 @@ public class Character : GameUnit
 
     public void ChangeAnim(string animName)
     {
-        Debug.Log(animName);
         if (currentAnim != animName)
         {
             anim.ResetTrigger(currentAnim);
@@ -47,16 +47,49 @@ public class Character : GameUnit
         }
     }
 
-    private void AddBrick()
+    protected Vector3 CheckGround(Vector3 nextPos)
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(nextPos, Vector3.down, out hit))
+        {
+            if (hit.collider.CompareTag(Const.TAG_STAIR))
+            {
+                Debug.Log("vkl");
+                return hit.point + Vector3.up * 1.1f;
+            }
+        }
+        
+        return TF.position;
+    }
+    
+    protected bool IsGrounded(Vector3 nextPos)
+    {
+        Ray ray = new Ray(nextPos, Vector3.down);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            
+            if (hit.collider.CompareTag(Const.TAG_GROUND))
+            {
+                Debug.DrawRay(nextPos, Vector3.down, Color.blue);
+                Debug.Log("adu");
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+    protected void AddBrick()
     { 
         CharacterBrick brickObject = Instantiate(brickBackPrefab, brickBack);
         brickObject.ChangeColor(colorType);
         //thay doi do cao cua gach
-        brickObject.transform.localPosition = Vector3.up * 0.4f * brickBacks.Count;
+        brickObject.TF.localPosition = Vector3.up * 0.4f * brickBacks.Count;
         brickBacks.Add(brickObject);
     }
 
-    private void RemoveBrick()
+    protected void RemoveBrick()
     {
         Vector3 originPos = TF.position + Vector3.forward + Vector3.down * 1.5f;
         Ray ray = new Ray(originPos, Vector3.up);
@@ -73,11 +106,12 @@ public class Character : GameUnit
         }
     }
 
-    private void RemoveAllBrick()
+    protected void RemoveAllBrick()
     {
         for (int i = 0; i < brickBacks.Count; i++)
         {
-            brickBacks.Clear();
+            Destroy(brickBacks[i]);
+            brickBacks.RemoveAt(i);
         }
     }
     protected void CheckStair()

@@ -1,10 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Bot : Character
 {
     private IState<Bot> currentState;
+    [SerializeField] public NavMeshAgent agent;
+    [SerializeField] private Transform finishPos;
+    [SerializeField] private Rigidbody rb;
+
+    private void Start()
+    {
+        ChangeState(new IdleState());
+    }
 
     private void Update()
     {

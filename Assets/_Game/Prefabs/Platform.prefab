@@ -318,7 +318,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1167428152096965833}
   - component: {fileID: 8813233095203945921}
-  - component: {fileID: 8173093862619970404}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -346,28 +345,6 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8813233095203945921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8302935033572657015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1124376370df164684c707b3aa92d9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstBrickPos: {fileID: 810997800686942137}
-  brickPrefab: {fileID: 1740682432392348949, guid: 57caaa5b08521a94b9fbe01ab23399fa, type: 3}
-  brickPositions: []
-  character: {fileID: 0}
-  brickOnStages: []
-  brickAfterChangeColor: []
-  brickNewPlatforms: []
-  checkPos: []
-  colorType: 0
-  spawnBrickPos: {x: 0, y: 0, z: 0}
---- !u!114 &8173093862619970404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

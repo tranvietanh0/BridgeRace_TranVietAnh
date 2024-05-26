@@ -13,6 +13,22 @@ public enum ColorType
     Black = 6
 }
 
+public enum GameState
+{
+    None = 0,
+    MainMenu = 1,
+    GamePlay = 2,
+    Pause = 3
+}
+
+public enum BotState
+{
+    None = 0,
+    Idle = 1,
+    TakeBrick = 2,
+    BuildBridge = 3
+}
+
 
 public class Const
 {
@@ -24,6 +40,7 @@ public class Const
     public const string TAG_PLAYER = "Player";
     public const string TAG_STAIR = "Floor";
     public const string TAG_WINPOS = "Win";
+    public const string TAG_GROUND = "Ground";
 
     public const string LAYER_BRIDGE = "Bridge";
     public const string LAYER_GROUND = "Ground";

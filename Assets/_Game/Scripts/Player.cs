@@ -16,8 +16,9 @@ public class Player : Character
     [SerializeField] private float rotateSpeed = 5f;
     
     private Stack<Vector3> placedBricks = new Stack<Vector3>();
-    private Vector3 m_moveVector;
+    private Vector3 m_moveVector, nextPos;
     private bool isMoving = false;
+    private bool isOnBridge = false;
     private Vector3 moveDirection;
 
 
@@ -51,6 +52,7 @@ public class Player : Character
         // quay joystick xuong thi move dc 
         if (joystick.Vertical <= 0)
         {
+            // TF.position = CheckGround(nextPos);
             isMoving = false;
         }
     }
@@ -62,21 +64,41 @@ public class Player : Character
             m_moveVector = Vector3.zero;
             m_moveVector.x = joystick.Horizontal * moveSpeed * Time.deltaTime;
             m_moveVector.z = joystick.Vertical * moveSpeed * Time.deltaTime;
-            if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+            if (Math.Abs(joystick.Horizontal) > 0.1f || Math.Abs(joystick.Vertical) > 0.1f)
             {
+                //huong quay joystick de di chuyen
                 Vector3 direction =
                     Vector3.RotateTowards(transform.forward, m_moveVector, rotateSpeed * Time.deltaTime, 0.0f);
                 transform.rotation = Quaternion.LookRotation(direction);
+                //gan huong vao bien co san
+                moveDirection = direction;
                 ChangeAnim(Const.RUN_ANIM);
 
             }
-            else if (joystick.Horizontal == 0 && joystick.Vertical == 0 && !isWin)
+            else if (Input.GetMouseButtonUp(0))
             {
-                ChangeAnim(Const.IDLE_ANIM);
+                if (!isWin)
+                {
+                    ChangeAnim(Const.IDLE_ANIM);
+                }
+                else
+                {
+                    RemoveAllBrick();
+                    ChangeAnim(Const.DANCE_ANIM);
+                }
             }
-
-            // transform.Translate(new Vector3(joystick.Horizontal, 0, joystick.Vertical) * moveSpeed * Time.deltaTime, Space.World);
-            rb.MovePosition(rb.position + m_moveVector);
+            nextPos = TF.position + moveDirection;
+            transform.Translate(new Vector3(joystick.Horizontal, 0, joystick.Vertical) * moveSpeed * Time.deltaTime,
+                Space.World);
+            // if (IsGrounded(nextPos))
+            // {
+            //     Debug.Log("o mat dat");
+            //     rb.MovePosition(rb.position + m_moveVector);
+            // }
+            // else
+            // {
+            //     transform.Translate(m_moveVector * moveSpeed * Time.deltaTime, Space.World);
+            // }
         }
     }
 
