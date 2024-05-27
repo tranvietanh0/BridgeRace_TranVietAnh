@@ -41,7 +41,8 @@ public class Const
     public const string TAG_STAIR = "Floor";
     public const string TAG_WINPOS = "Win";
     public const string TAG_GROUND = "Ground";
-
+    
+    public const string LAYER_CHARACTER = "Character";
     public const string LAYER_BRIDGE = "Bridge";
     public const string LAYER_GROUND = "Ground";
     

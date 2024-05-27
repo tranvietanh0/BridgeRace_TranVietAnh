@@ -19,7 +19,6 @@ public class TakeBrickState : IState<Bot>
         {
             if (isBrickCollected)
             {
-                Debug.Log("adu");
                 isBrickCollected = false;
                 FindClosestBrick(t); // Tìm viên gạch gần nhất tiếp theo sau khi thu thập gạch
             }
@@ -43,7 +42,6 @@ public class TakeBrickState : IState<Bot>
         if (sameColorBrick != null)
         {
             t.agent.SetDestination(sameColorBrick.TF.position);
-            Debug.Log(sameColorBrick.TF.position);
             isBrickCollected = true;
         }
         else

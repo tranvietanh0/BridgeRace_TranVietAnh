@@ -15,7 +15,6 @@ public class Character : GameUnit
     [SerializeField] protected LayerMask groundLayer;
     
     protected List<CharacterBrick> brickBacks = new List<CharacterBrick>();
-    public List<Vector3> emptyPos = new List<Vector3>();
     private IState<Character> currentState;
     private string currentAnim = Const.IDLE_ANIM;
     protected bool isMoveOnStair = true;
@@ -89,6 +88,7 @@ public class Character : GameUnit
         brickObject.ChangeColor(colorType);
         //thay doi do cao cua gach
         brickObject.TF.localPosition = Vector3.up * 0.4f * brickBacks.Count;
+        brickObject.gameObject.layer = LayerMask.NameToLayer(Const.LAYER_CHARACTER);
         brickBacks.Add(brickObject);
     }
 
@@ -119,6 +119,7 @@ public class Character : GameUnit
     }
     public void CheckStair()
     {
+        Debug.Log(brickBacks.Count);
         Vector3 originPos = TF.position + Vector3.forward + Vector3.down * 1.5f;
         Ray ray = new Ray(originPos, Vector3.up);
         RaycastHit hit;

@@ -11,6 +11,7 @@ public class Platform : MonoBehaviour
     [SerializeField] public Brick brickPrefab;
     [SerializeField] public List<Vector3> brickPositions = new List<Vector3>();
     [SerializeField] private Character character;
+    [SerializeField]private List<Transform> bridgeStartPos = new List<Transform>();
     
     public List<Brick> brickOnStages = new List<Brick>();
     public List<Brick> brickAfterChangeColor = new List<Brick>();
@@ -85,40 +86,12 @@ public class Platform : MonoBehaviour
         }
     }
 
-    // private void SpawnBrickAfterTake(List<ColorType> colorTypes)
-    // {
-    //     if (brickOnStages.Count < 40)
-    //     {
-    //         for (int i = 0; i < character.emptyPos.Count; i++)
-    //         {
-    //             Brick brick = SimplePool.Spawn<Brick>(brickPrefab, character.emptyPos[i], Quaternion.identity);
-    //             int colorIndex = i % colorTypes.Count;
-    //             brick.ChangeColor(colorTypes[colorIndex]);
-    //         }
-    //     }
-    // }
-
-    // public Brick FindSameColor(ColorType colorType, Vector3 botPos) 
-    // {
-    //     Debug.Log(LevelManager.Instance().BrickAfterChangeColor.Count);
-    //     Brick brick = null;
-    //     float minDistance = Mathf.Infinity;
-    //     for (int i = 0; i < LevelManager.Instance().BrickAfterChangeColor.Count; i++)
-    //     {
-    //         if (LevelManager.Instance().BrickAfterChangeColor[i].colorType == colorType)
-    //         {
-    //             float distance = Vector3.Distance(botPos, LevelManager.Instance().BrickAfterChangeColor[i].TF.position);
-    //             if (distance < minDistance)
-    //             {
-    //                 minDistance = distance;
-    //                 brick = LevelManager.Instance().BrickAfterChangeColor[i];
-    //             }
-    //         }
-    //     }
-    //
-    //     return brick;
-    // }
-    
+    public Vector3 GetBridgeStartPos()
+    {
+        int indexStartBridgePos = Random.Range(0, bridgeStartPos.Count);
+        Transform randomStartBridgePos = bridgeStartPos[indexStartBridgePos];
+        return randomStartBridgePos.position;
+    }
     public Brick FindSameColor(ColorType colorType) 
     {
         Brick closestBrick = null;
