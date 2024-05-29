@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1063178913231577219}
   - component: {fileID: 1431708613109024290}
   - component: {fileID: 7899627556432078567}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ Transform:
   m_GameObject: {fileID: 5286310025811211036}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: -10}
+  m_LocalPosition: {x: 0, y: 0.5, z: -9.52}
   m_LocalScale: {x: 20, y: 1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -364,6 +364,7 @@ MonoBehaviour:
   - {fileID: 1318717917699704180, guid: 13994661cc4ae0d4fa5e6fc968c660e8, type: 3}
   - {fileID: 1318717917699704180, guid: 13994661cc4ae0d4fa5e6fc968c660e8, type: 3}
   - {fileID: 1318717917699704180, guid: 13994661cc4ae0d4fa5e6fc968c660e8, type: 3}
+  brickOfNewPlatform: []
   brickOnStages: []
   brickAfterChangeColor: []
   brickNewPlatforms: []
@@ -383,9 +384,26 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   checkPos: []
   colorType: 0
   spawnBrickPos: {x: 0, y: 0, z: 0}
+  isNewPlatform: 0
 --- !u!1001 &8433966197505296577
 PrefabInstance:
   m_ObjectHideFlags: 0

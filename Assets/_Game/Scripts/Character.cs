@@ -14,7 +14,7 @@ public class Character : GameUnit
     [SerializeField] protected LayerMask bridgeLayer;
     [SerializeField] protected LayerMask groundLayer;
     
-    protected List<CharacterBrick> brickBacks = new List<CharacterBrick>();
+    [SerializeField]protected List<CharacterBrick> brickBacks = new List<CharacterBrick>();
     private IState<Character> currentState;
     private string currentAnim = Const.IDLE_ANIM;
     protected bool isMoveOnStair = true;
@@ -119,7 +119,6 @@ public class Character : GameUnit
     }
     public void CheckStair()
     {
-        Debug.Log(brickBacks.Count);
         Vector3 originPos = TF.position + Vector3.forward + Vector3.down * 1.5f;
         Ray ray = new Ray(originPos, Vector3.up);
         RaycastHit hit;
@@ -128,8 +127,8 @@ public class Character : GameUnit
             Debug.DrawRay(TF.position + Vector3.forward, Vector3.up, Color.red);
             if (hit.collider.CompareTag(Const.TAG_STAIR))
             {
+                Debug.Log("den cau");
                 //check xem con di chuyen tren cau khong
-                isMoveOnStair = true;
                 //goi collider cua stair tu cache
                 Stair stair = Cache.GetStair(hit.collider);
                 if (stair.colorType != colorType)
@@ -149,8 +148,9 @@ public class Character : GameUnit
             Brick brick = Cache.GetBrick(other);
             if (brick.colorType == colorType)
             {
-                brick.DelayAppear();
+                LevelManager.Instance().BrickAfterChangeColor.Add(brick);
                 AddBrick();
+                brick.DelayAppear();
             }
         }
 

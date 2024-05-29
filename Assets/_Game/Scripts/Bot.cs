@@ -7,8 +7,8 @@ public class Bot : Character
 {
     private IState<Bot> currentState;
     [SerializeField] public NavMeshAgent agent;
-    [SerializeField] private Transform finishPos;
-    [SerializeField] private List<GameObject> nextPlatform = new List<GameObject>();
+    [SerializeField] public Transform finishPos;
+    
 
     private void Start()
     {
@@ -23,26 +23,32 @@ public class Bot : Character
         }
     }
 
-    public void MoveToNextPlatform()
+    
+
+    public void CheckMoveOnBridge()
     {
-        float minDistance = Mathf.Infinity;
-        Vector3 tmpPos;
-        for (int i = 0; i < nextPlatform.Count; i++)
+        Debug.Log(BotBrick);
+        if (BotBrick > 0)
         {
-            float distance = Vector3.Distance(nextPlatform[i].transform.position, this.TF.position);
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-            }
+            CheckStair();
         }
 
-        for (int i = 0; i < nextPlatform.Count; i++)
+        else
         {
-            float distance = Vector3.Distance(nextPlatform[i].transform.position, this.TF.position);
-            if (Mathf.Abs(distance - minDistance) < 0.1f)
+            if (Physics.Raycast(TF.position + Vector3.forward + Vector3.down * 1.5f, Vector3.up, out RaycastHit hit))
             {
-                agent.SetDestination(nextPlatform[i].transform.position);
+                Stair stair = Cache.GetStair(hit.collider);
+                // check stair va mau khac vs mau player thi moi dung lai
+                if (hit.collider.CompareTag(Const.TAG_STAIR) && stair.colorType != colorType)
+                {
+                    Debug.DrawRay(TF.position, Vector3.down, Color.green, bridgeLayer);
+                    agent.speed = 0f;
+                    // moveSpeed = 0;
+                    // rotateSpeed = 0f;
+                    Debug.Log("dung lai");
+                }
             }
+           
         }
     }
     public void MoveToWinPos()

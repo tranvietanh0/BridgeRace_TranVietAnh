@@ -13,16 +13,25 @@ public class Platform : MonoBehaviour
     [SerializeField] private Character character;
     [SerializeField]private List<Transform> bridgeStartPos = new List<Transform>();
     
+    
+    public List<Brick> brickOfNewPlatform = new List<Brick>();
     public List<Brick> brickOnStages = new List<Brick>();
     public List<Brick> brickAfterChangeColor = new List<Brick>();
     public List<Vector3> brickNewPlatforms = new List<Vector3>();
     public List<Brick> brickBotTake = new List<Brick>();
     public List<Vector3> checkPos = new List<Vector3>();
-    public ColorType colorType;
     
+    public ColorType colorType;
     public Vector3 spawnBrickPos;
+    public bool isNewPlatform = false;
+    public int currentPlatformIndex = 0;
     
 
+    public void OnInit()
+    {
+        OnEmptyPoint();
+    }
+    
     // sinh ra cac vi tri rong de xep gach vao moi stage
     public void OnEmptyPoint()
     {
@@ -57,7 +66,7 @@ public class Platform : MonoBehaviour
 
     public void ChangeColorBrickOnStage(List<ColorType> colorTypes)
     {
-        brickAfterChangeColor.Clear();
+        // brickAfterChangeColor.Clear();
         for (int i = 0; i < brickOnStages.Count; i++)
         {
             int colorIndex = i % colorTypes.Count;
@@ -71,27 +80,23 @@ public class Platform : MonoBehaviour
 
     public void BrickOnNextPlatform(Character character)
     {
+        isNewPlatform = true;
         int sumRandomBrick = brickPositions.Count / 4;
         while (sumRandomBrick != 0)
         {
-            Debug.Log(brickPositions.Count);
             int randomIndex = Random.Range(0, brickPositions.Count);
             if (!brickNewPlatforms.Contains(brickPositions[randomIndex]))
             {
                 brickNewPlatforms.Add(brickPositions[randomIndex]);
                 Brick brick = SimplePool.Spawn<Brick>(brickPrefab, brickPositions[randomIndex], Quaternion.identity);
                 brick.ChangeColor(character.colorType);
+                brickAfterChangeColor.Add(brick);
+                LevelManager.Instance().BrickAfterChangeColor.Add(brick);
             }
             sumRandomBrick--;
         }
     }
-
-    public Vector3 GetBridgeStartPos()
-    {
-        int indexStartBridgePos = Random.Range(0, bridgeStartPos.Count);
-        Transform randomStartBridgePos = bridgeStartPos[indexStartBridgePos];
-        return randomStartBridgePos.position;
-    }
+    
     public Brick FindSameColor(ColorType colorType) 
     {
         Brick closestBrick = null;
@@ -109,7 +114,7 @@ public class Platform : MonoBehaviour
                 }
             }
         }
-
+    
         if (closestBrick != null)
         {
             brickBotTake.Add(closestBrick);
@@ -117,8 +122,20 @@ public class Platform : MonoBehaviour
     
         return closestBrick;
     }
-
-
+    // public Brick FindSameColor(ColorType colorType)
+    // {
+    //     Brick brick = null;
+    //     for (int i = 0; i < LevelManager.Instance().BrickAfterChangeColor.Count; i++)
+    //     {
+    //         if (LevelManager.Instance().BrickAfterChangeColor[i].colorType == colorType)
+    //         {
+    //             brick = LevelManager.Instance().BrickAfterChangeColor[i];
+    //         }
+    //     }
+    //
+    //     return brick;
+    // }
+    
     
         
 }

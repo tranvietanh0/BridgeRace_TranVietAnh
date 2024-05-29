@@ -90,8 +90,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
@@ -142,15 +142,12 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+  brickBacks: []
   isWin: 0
   colorType: 0
   platform: {fileID: 8813233095203945921, guid: a24e487f5c9f21b4cbd155a8b67ee34b, type: 3}
   agent: {fileID: 7078231508050589688}
   finishPos: {fileID: 5280811155864013642, guid: 2dffb8560cf13434bb39f9a3cfc88b0c, type: 3}
-  nextPlatform:
-  - {fileID: 99680022160299153, guid: 2f07b825b8081ff43b8faf877b3675a0, type: 3}
-  - {fileID: 4551276786483285405, guid: 1733bfe3d461c384bb97ba2caa858090, type: 3}
-  - {fileID: 3007126673893964105, guid: 9ac64a8031ba71143b5ec12a97d696f3, type: 3}
 --- !u!195 &7078231508050589688
 NavMeshAgent:
   m_ObjectHideFlags: 0

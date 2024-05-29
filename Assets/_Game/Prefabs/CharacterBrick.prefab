@@ -121,4 +121,4 @@ MonoBehaviour:
   poolType: 0
   colorType: 0
   colorData: {fileID: 11400000, guid: c8afa11e0f545ee4f8601d3616d60212, type: 2}
-  renderer: {fileID: 2992844869214675558}
+  rd: {fileID: 2992844869214675558}

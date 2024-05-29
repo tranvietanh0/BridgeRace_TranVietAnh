@@ -7,11 +7,11 @@ public class CharacterBrick : GameUnit
     public ColorType colorType;
 
     [SerializeField] private ColorData colorData;
-    [SerializeField] private Renderer renderer;
+    [SerializeField] private Renderer rd;
 
     public void ChangeColor(ColorType colorType)
     {
         this.colorType = colorType;
-        renderer.material = colorData.GetColorMatByEnum((int)colorType);
+        rd.material = colorData.GetColorMatByEnum((int)colorType);
     }
 }
