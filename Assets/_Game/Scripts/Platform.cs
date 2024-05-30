@@ -92,12 +92,13 @@ public class Platform : MonoBehaviour
                 brick.ChangeColor(character.colorType);
                 brickAfterChangeColor.Add(brick);
                 LevelManager.Instance().BrickAfterChangeColor.Add(brick);
+                Debug.Log("da them gach");
             }
             sumRandomBrick--;
         }
     }
     
-    public Brick FindSameColor(ColorType colorType) 
+    public Brick FindSameColor(ColorType colorType, Bot t) 
     {
         Brick closestBrick = null;
         float minDistance = Mathf.Infinity;
@@ -106,7 +107,7 @@ public class Platform : MonoBehaviour
             Brick brick = LevelManager.Instance().BrickAfterChangeColor[i];
             if (brick.colorType == colorType && !brickBotTake.Contains(brick))
             {
-                float distance = Vector3.Distance(LevelManager.Instance().player.transform.position, brick.TF.position);
+                float distance = Vector3.Distance(t.TF.position, brick.TF.position);
                 if (distance < minDistance)
                 {
                     minDistance = distance;

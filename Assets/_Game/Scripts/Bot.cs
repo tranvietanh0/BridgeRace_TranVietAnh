@@ -27,7 +27,6 @@ public class Bot : Character
 
     public void CheckMoveOnBridge()
     {
-        Debug.Log(BotBrick);
         if (BotBrick > 0)
         {
             CheckStair();

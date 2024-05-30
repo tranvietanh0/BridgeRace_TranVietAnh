@@ -15,8 +15,10 @@ public class Door : MonoBehaviour
         {
             m_colorTypes.Add(character.colorType);
             character.platform = platform;
+            // platform.brickBotTake.Clear();
             platform.OnEmptyPoint();
             platform.BrickOnNextPlatform(character);
+            
         }
     }
 }

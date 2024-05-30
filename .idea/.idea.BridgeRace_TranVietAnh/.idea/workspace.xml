@@ -6,31 +6,30 @@
   <component name="ChangeListManager">
     <list default="true" id="f94a555f-e971-402d-a3b7-58c571ed5d77" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BridgeRace_TranVietAnh/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BridgeRace_TranVietAnh/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Materials/Black.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Materials/Black.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Materials/Default.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Materials/Default.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Materials/Gray.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Materials/Gray.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Materials/Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Materials/Green.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Materials/Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Materials/Orange.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Materials/Platform.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Materials/Platform.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Materials/Purple.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Materials/Purple.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Materials/Red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Materials/Red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Materials/Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Materials/Yellow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Icon_ItemIcons(x2)/ItemIcons(x2).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Icon_PictoIcons(x2)/PictoIcons(x2).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Icon_RuneIcons(x2)/RuneIcons(x2).unitypackage.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Bot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Bot.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Bridge.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Bridge.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/CharacterBrick.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/CharacterBrick.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Platform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Platform.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Winpos.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Winpos.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Cube (1).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Cube (1).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Cube (2).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Cube (2).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Cube.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Cube.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Level/Level1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Level/Level1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Step.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Step.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Navmesh 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Navmesh 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Navmesh 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Navmesh 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Navmesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Navmesh.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Bot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Bot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/CharacterBrick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/CharacterBrick.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Door.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/LevelManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Platform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Platform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/StateMachine/BuildBridgeState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/StateMachine/BuildBridgeState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/StateMachine/TakeBrickState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/StateMachine/TakeBrickState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +153,9 @@
       <workItem from="1716858816077" duration="3303000" />
       <workItem from="1716883328880" duration="10588000" />
       <workItem from="1716934650545" duration="11013000" />
+      <workItem from="1716992673926" duration="1201000" />
+      <workItem from="1717031476220" duration="7381000" />
+      <workItem from="1717077336023" duration="3054000" />
     </task>
     <servers />
   </component>
@@ -165,5 +167,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_Game/Scripts/Bot.cs</url>
+          <line>70</line>
+          <properties documentPath="E:\Game2023\BridgeRace_TranVietAnh\Assets\_Game\Scripts\Bot.cs" initialLine="70" containingFunctionPresentation="Method 'ChangeState'">
+            <startOffsets>
+              <option value="1646" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1667" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

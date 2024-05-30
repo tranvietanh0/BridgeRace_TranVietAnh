@@ -141,7 +141,7 @@ MonoBehaviour:
     m_Bits: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   brickBacks: []
   isWin: 0
   colorType: 0

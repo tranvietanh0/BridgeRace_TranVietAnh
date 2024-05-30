@@ -32,8 +32,8 @@ public class TakeBrickState : IState<Bot>
             }
             else
             {
-                // t.ChangeState(new TakeBrickState());
-                FindClosestBrick(t);
+                t.ChangeState(new TakeBrickState());
+                // FindClosestBrick(t);
             }
         }
     }
@@ -46,8 +46,8 @@ public class TakeBrickState : IState<Bot>
 
     public void FindClosestBrick(Bot t)
     {
-        Debug.Log("bot brick la:" + t.BotBrick);
-        Brick sameColorBrick = t.platform.FindSameColor(t.colorType);
+        Debug.Log(t.platform);
+        Brick sameColorBrick = t.platform.FindSameColor(t.colorType, t);
         if (sameColorBrick != null)
         {
             t.agent.SetDestination(sameColorBrick.TF.position);
