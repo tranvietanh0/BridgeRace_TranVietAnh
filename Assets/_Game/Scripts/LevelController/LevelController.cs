@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class LevelController : MonoBehaviour
 {
-    public NavMeshData navMeshData;
+    // public NavMeshData navMeshData;
     public Platform[] platforms;
 
     public void OnInit()

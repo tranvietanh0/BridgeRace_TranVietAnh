@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 public class LevelManager : GOSingleton<LevelManager>
@@ -15,11 +16,14 @@ public class LevelManager : GOSingleton<LevelManager>
 
     public List<ColorType> colorRandoms = new List<ColorType>();
     private List<Bot> bots = new List<Bot>();
+    public List<LevelController> levelPrefabs = new List<LevelController>();
+    [SerializeField] private LevelController currentLevel;
     public List<Brick> BrickAfterChangeColor => platform.brickAfterChangeColor;
     
     // Start is called before the first frame update
     void Start()
     {
+        LoadLevel(0);
         OnInit();
     }
 
@@ -40,6 +44,9 @@ public class LevelManager : GOSingleton<LevelManager>
             startPos += Vector3.right * 2f;
             characterPos.Add(startPos);
         }
+        //thay doi navmeshdata
+        // NavMesh.RemoveAllNavMeshData();
+        // NavMesh.AddNavMeshData(currentLevel.navMeshData);
 
         //random 4 mau gach o moi level
         while (colorRandoms.Count < 4)
@@ -64,6 +71,20 @@ public class LevelManager : GOSingleton<LevelManager>
         {
             Bot bot = SimplePool.Spawn<Bot>(PoolType.Bot, characterPos[i], Quaternion.identity);
             bot.ChangeColor(colorRandoms[i]);
+            bots.Add(bot);
+        }
+    }
+
+    public void LoadLevel(int indexOfLevel)
+    {
+        if (currentLevel != null)
+        {
+            Destroy(currentLevel.gameObject);
+        }
+
+        if (indexOfLevel < levelPrefabs.Count)
+        {
+            currentLevel = Instantiate(levelPrefabs[indexOfLevel]);
         }
     }
 }
