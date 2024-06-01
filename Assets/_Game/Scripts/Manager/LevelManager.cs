@@ -19,11 +19,12 @@ public class LevelManager : GOSingleton<LevelManager>
     public List<LevelController> levelPrefabs = new List<LevelController>();
     [SerializeField] private LevelController currentLevel;
     public List<Brick> BrickAfterChangeColor => platform.brickAfterChangeColor;
-    
+
+    [SerializeField] private List<Transform> finishPosList = new List<Transform>();
     // Start is called before the first frame update
     void Start()
     {
-        LoadLevel(0);
+        LoadLevel(Pref.curPlayerLevel);
         OnInit();
     }
 
@@ -36,6 +37,9 @@ public class LevelManager : GOSingleton<LevelManager>
 
     private void OnInit()
     {
+        platform.ClearBrickPositions();
+        //Set finishPos cho bot o moi level
+        bot.finishPos.position = finishPosList[Pref.curPlayerLevel].position;
         // set vi tri cho player va bot
         List<Vector3> characterPos = new List<Vector3>();
         Vector3 startPos = firstPosPlayer.position;
@@ -44,9 +48,6 @@ public class LevelManager : GOSingleton<LevelManager>
             startPos += Vector3.right * 2f;
             characterPos.Add(startPos);
         }
-        //thay doi navmeshdata
-        // NavMesh.RemoveAllNavMeshData();
-        // NavMesh.AddNavMeshData(currentLevel.navMeshData);
 
         //random 4 mau gach o moi level
         while (colorRandoms.Count < 4)
@@ -86,5 +87,17 @@ public class LevelManager : GOSingleton<LevelManager>
         {
             currentLevel = Instantiate(levelPrefabs[indexOfLevel]);
         }
+    }
+    public void ResetPoolingObject()
+    {
+        SimplePool.CollectAll();
+        bots.Clear();
+    }
+    public void NextLevel()
+    {
+        Pref.curPlayerLevel++;
+        ResetPoolingObject();
+        LoadLevel(Pref.curPlayerLevel);
+        OnInit();
     }
 }

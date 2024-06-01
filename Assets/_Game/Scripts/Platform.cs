@@ -11,7 +11,7 @@ public class Platform : MonoBehaviour
     [SerializeField] public Brick brickPrefab;
     [SerializeField] public List<Vector3> brickPositions = new List<Vector3>();
     [SerializeField] private Character character;
-    [SerializeField]private List<Transform> bridgeStartPos = new List<Transform>();
+    [SerializeField] private List<Transform> bridgeStartPos = new List<Transform>();
     
     
     public List<Brick> brickOfNewPlatform = new List<Brick>();
@@ -27,14 +27,15 @@ public class Platform : MonoBehaviour
     public int currentPlatformIndex = 0;
     
 
-    public void OnInit()
-    {
-        OnEmptyPoint();
-    }
+    // public void OnInit()
+    // {
+    //     OnEmptyPoint();
+    // }
     
     // sinh ra cac vi tri rong de xep gach vao moi stage
     public void OnEmptyPoint()
     {
+        brickPositions.Clear();
         spawnBrickPos = firstBrickPos.position;
         spawnBrickPos.y -= 0.5f;
         for (int i = 0; i < 5; i++)
@@ -48,12 +49,19 @@ public class Platform : MonoBehaviour
             spawnBrickPos.x = firstBrickPos.position.x;
         }
     }
+    public void ClearBrickPositions()
+    {
+        brickPositions.Clear();
+        checkPos.Clear();
+        brickOnStages.Clear();
+        brickAfterChangeColor.Clear();
+        brickBotTake.Clear();
+    }
 
     public void EnableBrick()
     {
         while (checkPos.Count < brickPositions.Count)
         {
-            
             int randomIndex = Random.Range(0, brickPositions.Count);
             if (!checkPos.Contains(brickPositions[randomIndex]))
             {

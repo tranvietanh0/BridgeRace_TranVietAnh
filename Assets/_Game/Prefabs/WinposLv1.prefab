@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3253781558776470957}
   - component: {fileID: -7428837246246092776}
   m_Layer: 0
-  m_Name: Winpos
+  m_Name: WinposLv1
   m_TagString: Win
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

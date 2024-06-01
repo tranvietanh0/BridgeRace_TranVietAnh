@@ -16,23 +16,24 @@ public class Brick : GameUnit
         rd.material = colorData.GetColorMatByEnum((int)colorType);
     }
 
-    public void DelayAppear()
+    public void DelayAppear(Brick brick)
     {
         if (gameObject.GetComponent<Renderer>() != null && gameObject.GetComponent<BoxCollider>() != null)
         {
             gameObject.GetComponent<Renderer>().enabled = false;
             gameObject.GetComponent<BoxCollider>().enabled = false;
         }
-        StartCoroutine(CoDelayAppear());
+        StartCoroutine(CoDelayAppear(brick));
     }
 
-    private IEnumerator CoDelayAppear()
+    private IEnumerator CoDelayAppear(Brick brick)
     {
         yield return new WaitForSeconds(5f);
         if (gameObject.GetComponent<Renderer>() != null && gameObject.GetComponent<BoxCollider>() != null)
         {
             gameObject.GetComponent<Renderer>().enabled = true;
             gameObject.GetComponent<BoxCollider>().enabled = true;
+            LevelManager.Instance().BrickAfterChangeColor.Add(brick);
         }
     }
 }

@@ -11,13 +11,13 @@ using UnityEngine.PlayerLoop;
 public class Player : Character
 {
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private VariableJoystick joystick;
+    public VariableJoystick joystick;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotateSpeed = 5f;
     
     private Stack<Vector3> placedBricks = new Stack<Vector3>();
-    private Vector3 m_moveVector, nextPos;
-    private bool isMoving = false;
+    public Vector3 moveVector, nextPos;
+    public bool isMoving = false;
     private bool isOnBridge = false;
     private Vector3 moveDirection;
 
@@ -42,7 +42,7 @@ public class Player : Character
             if (hit.collider.CompareTag(Const.TAG_STAIR) && stair.colorType != colorType)
             {
                 Debug.DrawRay(TF.position, Vector3.down, Color.green, bridgeLayer);
-                m_moveVector = Vector3.zero;
+                moveVector = Vector3.zero;
                 // moveSpeed = 0;
                 // rotateSpeed = 0f;
                 Debug.Log("dung lai");
@@ -61,14 +61,14 @@ public class Player : Character
     {
         if (!isMoving)
         {
-            m_moveVector = Vector3.zero;
-            m_moveVector.x = joystick.Horizontal * moveSpeed * Time.deltaTime;
-            m_moveVector.z = joystick.Vertical * moveSpeed * Time.deltaTime;
+            moveVector = Vector3.zero;
+            moveVector.x = joystick.Horizontal * moveSpeed * Time.deltaTime;
+            moveVector.z = joystick.Vertical * moveSpeed * Time.deltaTime;
             if (Math.Abs(joystick.Horizontal) > 0.1f || Math.Abs(joystick.Vertical) > 0.1f)
             {
                 //huong quay joystick de di chuyen
                 Vector3 direction =
-                    Vector3.RotateTowards(transform.forward, m_moveVector, rotateSpeed * Time.deltaTime, 0.0f);
+                    Vector3.RotateTowards(transform.forward, moveVector, rotateSpeed * Time.deltaTime, 0.0f);
                 transform.rotation = Quaternion.LookRotation(direction);
                 //gan huong vao bien co san
                 moveDirection = direction;
@@ -93,11 +93,11 @@ public class Player : Character
             // if (IsGrounded(nextPos))
             // {
             //     Debug.Log("o mat dat");
-            //     rb.MovePosition(rb.position + m_moveVector);
+            //     rb.MovePosition(rb.position + moveVector);
             // }
             // else
             // {
-            //     transform.Translate(m_moveVector * moveSpeed * Time.deltaTime, Space.World);
+            //     transform.Translate(moveVector * moveSpeed * Time.deltaTime, Space.World);
             // }
         }
     }

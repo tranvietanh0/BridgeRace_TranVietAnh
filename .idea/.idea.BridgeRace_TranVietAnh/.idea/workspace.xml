@@ -6,29 +6,56 @@
   <component name="ChangeListManager">
     <list default="true" id="f94a555f-e971-402d-a3b7-58c571ed5d77" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BridgeRace_TranVietAnh/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BridgeRace_TranVietAnh/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Level/Level1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Level/Level1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Level/Level2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Level/Level2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Winpos.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Winpos.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Level/Level3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Level/Level3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Winpos.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Winpos.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Level1 1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Level1 1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Level1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Level1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Level1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Level1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Level2 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Level2 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Level2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/SampleScene/NavMesh-Level2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Brick.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Brick.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/CameraFollow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/CameraFollow.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Door.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Door.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/FinishPos.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/FinishPos.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/LevelController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/LevelController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/DataStruct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/DataStruct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/LevelController/Brick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/LevelController/Brick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/LevelController/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/LevelController/Door.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/LevelController/FinishPos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/LevelController/FinishPos.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/LevelController/LevelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/LevelController/LevelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/GameManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Stair.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Stair.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Scripts/UI/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/UIManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Scripts/UI/UIManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Platform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Platform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Pool/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Pool/Scenes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Pool/Scenes/Sample UI Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Pool/Scenes/Sample UI Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Pool/Scenes/Sample UI Scene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Pool/Scenes/Sample UI Scene.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/ReadMe.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/ReadMe.txt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Resources.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Resources.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Resources/UI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Resources/UI.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - GamePlay.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - GamePlay.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - GamePlay.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - GamePlay.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - Lose.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - Lose.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - Lose.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - Lose.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - MainMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - MainMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - MainMenu.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - MainMenu.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - Setting.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - Setting.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - Setting.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - Setting.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - Win.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - Win.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - Win.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Resources/UI/Canvas - Win.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Scripts/GamePlay.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Scripts/GamePlay.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Scripts/Lose.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Scripts/Lose.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Scripts/Lose.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Scripts/Lose.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Scripts/MianMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Scripts/MianMenu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Scripts/Setting.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Scripts/Setting.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Scripts/UI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Scripts/UI.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Scripts/UI/CanvasBlockRaycast.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Scripts/UI/CanvasBlockRaycast.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Scripts/UI/Singleton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Scripts/UI/Singleton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Scripts/UI/UICanvas.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Scripts/UI/UICanvas.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Scripts/Win.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Scripts/Win.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/Scripts/Win.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/Scripts/Win.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/UIManager.mp4.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/UIManager.mp4.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +71,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/CharacterBrick.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Data/DataStruct.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Data/Pref.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Manager/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/StateMachine/BuildBridgeState.cs" root0="FORCE_HIGHLIGHTING" />
@@ -154,7 +182,9 @@
       <workItem from="1717031476220" duration="7381000" />
       <workItem from="1717077336023" duration="11128000" />
       <workItem from="1717122256927" duration="2601000" />
-      <workItem from="1717155375775" duration="909000" />
+      <workItem from="1717155375775" duration="7607000" />
+      <workItem from="1717172998096" duration="3277000" />
+      <workItem from="1717203620814" duration="12406000" />
     </task>
     <servers />
   </component>
@@ -166,24 +196,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Game/Scripts/Bot.cs</url>
-          <line>70</line>
-          <properties documentPath="E:\Game2023\BridgeRace_TranVietAnh\Assets\_Game\Scripts\Bot.cs" initialLine="70" containingFunctionPresentation="Method 'ChangeState'">
-            <startOffsets>
-              <option value="1646" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1667" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

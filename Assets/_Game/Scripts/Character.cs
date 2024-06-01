@@ -138,7 +138,6 @@ public class Character : GameUnit
                 }
             }
         }
-
     }
     
     private void OnTriggerEnter(Collider other)
@@ -150,7 +149,7 @@ public class Character : GameUnit
             {
                 LevelManager.Instance().BrickAfterChangeColor.Add(brick);
                 AddBrick();
-                brick.DelayAppear();
+                brick.DelayAppear(brick);
             }
         }
 

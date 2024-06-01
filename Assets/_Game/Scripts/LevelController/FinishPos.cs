@@ -13,6 +13,13 @@ public class FinishPos : MonoBehaviour
             Debug.Log("Win");
             player.isWin = true;
             other.gameObject.GetComponent<Character>().ChangeAnim(Const.DANCE_ANIM);
+            DelayChangeLevel();
         }
+    }
+
+    IEnumerator DelayChangeLevel()
+    {
+        yield return new WaitForSeconds(3f);
+        LevelManager.Instance().NextLevel();
     }
 }

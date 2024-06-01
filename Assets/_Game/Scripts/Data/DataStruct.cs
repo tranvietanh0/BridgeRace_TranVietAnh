@@ -29,6 +29,12 @@ public enum BotState
     BuildBridge = 3
 }
 
+public enum GamePref
+{
+    None = 0,
+    CurLevelId = 1
+}
+
 
 public class Const
 {
@@ -41,6 +47,7 @@ public class Const
     public const string TAG_STAIR = "Floor";
     public const string TAG_WINPOS = "Win";
     public const string TAG_GROUND = "Ground";
+    public const string TAG_PLAYERMAIN = "PlayerMain";
     
     public const string LAYER_CHARACTER = "Character";
     public const string LAYER_BRIDGE = "Bridge";
