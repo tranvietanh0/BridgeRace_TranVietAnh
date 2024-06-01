@@ -40,6 +40,7 @@ public class LevelManager : GOSingleton<LevelManager>
         platform.ClearBrickPositions();
         //Set finishPos cho bot o moi level
         bot.finishPos.position = finishPosList[Pref.curPlayerLevel].position;
+        Debug.Log(bot.finishPos.position);
         // set vi tri cho player va bot
         List<Vector3> characterPos = new List<Vector3>();
         Vector3 startPos = firstPosPlayer.position;
@@ -96,6 +97,10 @@ public class LevelManager : GOSingleton<LevelManager>
         {
             currentLevel = Instantiate(levelPrefabs[indexOfLevel]);
         }
+        else
+        {
+            
+        }
     }
     public void ResetPoolingObject()
     {
@@ -106,6 +111,8 @@ public class LevelManager : GOSingleton<LevelManager>
     public void NextLevel()
     {
         Pref.curPlayerLevel++;
+        player.RemoveAllBrick();
+        player.transform.position = firstPosPlayer.position;
         ResetPoolingObject();
         LoadLevel(Pref.curPlayerLevel);
         OnInit();
@@ -120,5 +127,13 @@ public class LevelManager : GOSingleton<LevelManager>
         LoadLevel(Pref.curPlayerLevel);
         OnInit();
         EnterBotPlay();
+    }
+
+    public void FinishLevel()
+    {
+        for (int i = 0; i < bots.Count; i++)
+        {
+            bots[i].StopMoving();
+        }
     }
 }

@@ -77,7 +77,7 @@ public class Player : Character
             }
             else if (Input.GetMouseButtonUp(0))
             {
-                if (!isWin)
+                if (!isPlayerWin)
                 {
                     ChangeAnim(Const.IDLE_ANIM);
                 }

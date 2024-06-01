@@ -8,18 +8,18 @@ public class BuildBridgeState : IState<Bot>
     public void OnEnter(Bot t)
     {
         
-        if (t.isWin)
+        if (t.isBotWin)
         {
             
         }
         else
         {
-            Debug.Log("len dich");
             // t.ChangeAnim(Const.RUN_ANIM);
             // bridgeStartPos = t.platform.GetBridgeStartPos();
             t.platform.brickBotTake.Clear();
             t.MoveToWinPos();
             finishPos = t.finishPos.position;
+            Debug.Log("adu" + finishPos);
         }
     }
 
@@ -36,12 +36,7 @@ public class BuildBridgeState : IState<Bot>
             t.CheckMoveOnBridge();
             t.MoveToWinPos();
             Debug.Log("else cua excute bui bo rit");
-            // if (t.platform.isNewPlatform)
-            // {
-            //     Debug.Log("da vao new platform");
-            //     // FindClosestBrickOnNewPlatform(t);
-            //     t.ChangeState(new BuildBridgeState());
-            // }
+            
         }
     }
 

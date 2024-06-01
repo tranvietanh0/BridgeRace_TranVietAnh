@@ -8,11 +8,19 @@ public class FinishPos : MonoBehaviour
     [SerializeField] private Character player;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag(Const.TAG_PLAYER))
+        Character character = Cache.GetCharacter(other);
+        if (character != null)
         {
-            Debug.Log("Win");
-            player.isWin = true;
-            other.gameObject.GetComponent<Character>().ChangeAnim(Const.DANCE_ANIM);
+            LevelManager.Instance().FinishLevel();
+            if (character is Player)
+            {
+                character.isPlayerWin = true;
+                UIManager.Ins.OpenUI<Win>();
+            }
+            else
+            {
+                UIManager.Ins.OpenUI<Lose>();
+            }
         }
     }
 

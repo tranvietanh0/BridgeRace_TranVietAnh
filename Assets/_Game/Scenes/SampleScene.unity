@@ -280,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 257410842}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6602463, y: 4.699999, z: -0.6559898}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -575,7 +575,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   brickBacks: []
-  isWin: 0
+  isPlayerWin: 0
+  isBotWin: 0
   colorType: 0
   platform: {fileID: 8813233095203945921, guid: a24e487f5c9f21b4cbd155a8b67ee34b, type: 3}
   rb: {fileID: 639645491}
@@ -1550,7 +1551,7 @@ MonoBehaviour:
     collect: 1
   - root: {fileID: 265707691}
     prefab: {fileID: 6075443977627290145, guid: 1408081196baf3f4db7f7c9f789c300e, type: 3}
-    amount: 1
+    amount: 3
     collect: 1
   Particle: []
 --- !u!4 &2006113150

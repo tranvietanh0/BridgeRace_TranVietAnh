@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class Bot : Character
 {
     private IState<Bot> currentState;
-    [SerializeField] public NavMeshAgent agent;
-    [SerializeField] public Transform finishPos;
+    public NavMeshAgent agent;
+    public Transform finishPos;
     
 
     // private void Start()
@@ -28,6 +28,7 @@ public class Bot : Character
     {
         if (BotBrick > 0)
         {
+            Debug.Log("vkl");
             CheckStair();
         }
 
@@ -51,6 +52,7 @@ public class Bot : Character
     }
     public void MoveToWinPos()
     {
+        Debug.Log("aduma");
         agent.SetDestination(finishPos.position);
     }
 
@@ -77,6 +79,8 @@ public class Bot : Character
 
     public void StopMoving()
     {
-        agent.velocity = Vector3.zero;
+        Debug.Log("stopmoving");
+        agent.isStopped = true;
+        ChangeAnim(Const.IDLE_ANIM);
     }
 }

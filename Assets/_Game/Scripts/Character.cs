@@ -17,7 +17,8 @@ public class Character : GameUnit
     
     private IState<Character> currentState;
     private string currentAnim = Const.IDLE_ANIM;
-    public bool isWin = false;
+    public bool isPlayerWin = false;
+    public bool isBotWin = false;
     public ColorType colorType;
     public Platform platform;
 
@@ -36,6 +37,8 @@ public class Character : GameUnit
     public virtual void OnInit()
     {
         RemoveAllBrick();
+        isPlayerWin = false;
+        ChangeAnim(Const.IDLE_ANIM);
     }
 
     public void ChangeAnim(string animName)
@@ -112,7 +115,7 @@ public class Character : GameUnit
     {
         for (int i = 0; i < brickBacks.Count; i++)
         {
-            brickBacks[i].gameObject.SetActive(false);
+            Destroy(brickBacks[i].gameObject);
         }
         brickBacks.Clear();
     }
