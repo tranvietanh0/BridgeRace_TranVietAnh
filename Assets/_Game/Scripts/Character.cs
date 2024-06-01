@@ -13,11 +13,10 @@ public class Character : GameUnit
     [SerializeField] private Renderer rd;
     [SerializeField] protected LayerMask bridgeLayer;
     [SerializeField] protected LayerMask groundLayer;
+    public List<CharacterBrick> brickBacks = new List<CharacterBrick>();
     
-    [SerializeField]protected List<CharacterBrick> brickBacks = new List<CharacterBrick>();
     private IState<Character> currentState;
     private string currentAnim = Const.IDLE_ANIM;
-    protected bool isMoveOnStair = true;
     public bool isWin = false;
     public ColorType colorType;
     public Platform platform;
@@ -109,13 +108,13 @@ public class Character : GameUnit
         }
     }
 
-    protected void RemoveAllBrick()
+    protected internal void RemoveAllBrick()
     {
         for (int i = 0; i < brickBacks.Count; i++)
         {
-            Destroy(brickBacks[i]);
-            brickBacks.RemoveAt(i);
+            brickBacks[i].gameObject.SetActive(false);
         }
+        brickBacks.Clear();
     }
     public void CheckStair()
     {

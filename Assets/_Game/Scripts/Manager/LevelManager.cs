@@ -35,7 +35,7 @@ public class LevelManager : GOSingleton<LevelManager>
     }
     
 
-    private void OnInit()
+    public void OnInit()
     {
         platform.ClearBrickPositions();
         //Set finishPos cho bot o moi level
@@ -64,6 +64,7 @@ public class LevelManager : GOSingleton<LevelManager>
         platform.ChangeColorBrickOnStage(colorRandoms);
             // platform.TakeColor(colorRandoms[randomColorIndex]);
         //set mau cho player
+        player.OnInit();
         int randomIndexPlayerColor = Random.Range(0, colorRandoms.Count);
         player.ChangeColor(colorRandoms[randomIndexPlayerColor]);
         colorRandoms.RemoveAt(randomIndexPlayerColor);
@@ -71,11 +72,19 @@ public class LevelManager : GOSingleton<LevelManager>
         for (int i = 0; i < 3; i++)
         {
             Bot bot = SimplePool.Spawn<Bot>(PoolType.Bot, characterPos[i], Quaternion.identity);
+            bot.OnInit();
             bot.ChangeColor(colorRandoms[i]);
             bots.Add(bot);
         }
     }
 
+    public void EnterBotPlay()
+    {
+        for (int i = 0; i < bots.Count; i++)
+        {
+            bots[i].ChangeState(new IdleState());
+        }
+    }
     public void LoadLevel(int indexOfLevel)
     {
         if (currentLevel != null)
@@ -92,6 +101,7 @@ public class LevelManager : GOSingleton<LevelManager>
     {
         SimplePool.CollectAll();
         bots.Clear();
+        
     }
     public void NextLevel()
     {
@@ -99,5 +109,16 @@ public class LevelManager : GOSingleton<LevelManager>
         ResetPoolingObject();
         LoadLevel(Pref.curPlayerLevel);
         OnInit();
+    }
+    
+
+    public void RetryLevel()
+    {
+        ResetPoolingObject();
+        player.RemoveAllBrick();
+        player.transform.position = firstPosPlayer.position;
+        LoadLevel(Pref.curPlayerLevel);
+        OnInit();
+        EnterBotPlay();
     }
 }

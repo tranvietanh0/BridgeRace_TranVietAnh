@@ -10,10 +10,10 @@ public class Bot : Character
     [SerializeField] public Transform finishPos;
     
 
-    private void Start()
-    {
-        ChangeState(new IdleState());
-    }
+    // private void Start()
+    // {
+    //     ChangeState(new IdleState());
+    // }
 
     private void Update()
     {
@@ -22,7 +22,6 @@ public class Bot : Character
             currentState.OnExecute(this);
         }
     }
-
     
 
     public void CheckMoveOnBridge()
@@ -74,5 +73,10 @@ public class Bot : Character
         {
             currentState.OnEnter(this);
         }
+    }
+
+    public void StopMoving()
+    {
+        agent.velocity = Vector3.zero;
     }
 }

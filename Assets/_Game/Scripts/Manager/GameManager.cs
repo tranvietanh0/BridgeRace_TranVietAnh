@@ -11,7 +11,7 @@ public class GameManager : Singleton<GameManager>
     private static GameState gameState = GameState.MainMenu;
 
     // Start is called before the first frame update
-    protected void Awake()
+    private void Awake()
     {
         
         ChangeState(GameState.MainMenu);
@@ -19,12 +19,12 @@ public class GameManager : Singleton<GameManager>
         UIManager.Ins.OpenUI<MainMenu>();
     }
 
-    public static void ChangeState(GameState state)
+    public void ChangeState(GameState state)
     {
         gameState = state;
     }
 
-    public static bool IsState(GameState state)
+    public bool IsState(GameState state)
     {
         return gameState == state;
     }
