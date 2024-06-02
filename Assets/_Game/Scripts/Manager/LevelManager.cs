@@ -39,7 +39,7 @@ public class LevelManager : GOSingleton<LevelManager>
     {
         platform.ClearBrickPositions();
         //Set finishPos cho bot o moi level
-        bot.finishPos.position = finishPosList[Pref.curPlayerLevel].position;
+        bot.finishPos.position = levelPrefabs[Pref.curPlayerLevel].finishPos.position;
         Debug.Log(bot.finishPos.position);
         // set vi tri cho player va bot
         List<Vector3> characterPos = new List<Vector3>();

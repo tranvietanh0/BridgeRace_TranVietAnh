@@ -52,6 +52,7 @@ MonoBehaviour:
   platforms:
   - {fileID: 1394587702201280408}
   - {fileID: 4696685873716323811}
+  finishPos: {fileID: 5412509586149857320}
 --- !u!114 &-5645553203551771480
 MonoBehaviour:
   m_ObjectHideFlags: 0

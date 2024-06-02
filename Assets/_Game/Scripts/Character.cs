@@ -135,6 +135,7 @@ public class Character : GameUnit
                 Stair stair = Cache.GetStair(hit.collider);
                 if (stair.colorType != colorType)
                 {
+                    Debug.Log("doi mau stair");
                     stair.ChangeColor(colorType);
                     RemoveBrick();
                 }
