@@ -15,7 +15,7 @@ public class GamePlay : UICanvas
     //     UIManager.Ins.OpenUI<Lose>().score.text = Random.Range(0, 100).ToString(); 
     //     Close(0);
     // }
-
+    
     public void SettingButton()
     {
         UIManager.Ins.OpenUI<Setting>();

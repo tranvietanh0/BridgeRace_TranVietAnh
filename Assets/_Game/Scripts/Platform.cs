@@ -7,9 +7,9 @@ using Random = UnityEngine.Random;
 
 public class Platform : MonoBehaviour
 {
-    [SerializeField] public Transform firstBrickPos;
-    [SerializeField] public Brick brickPrefab;
-    [SerializeField] public List<Vector3> brickPositions = new List<Vector3>();
+    public Transform firstBrickPos;
+    public Brick brickPrefab;
+    public List<Vector3> brickPositions = new List<Vector3>();
     [SerializeField] private Character character;
     [SerializeField] private List<Transform> bridgeStartPos = new List<Transform>();
     
